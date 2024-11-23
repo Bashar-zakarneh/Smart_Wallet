@@ -1,8 +1,13 @@
-// Header Component
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   return (
     <header className="bg-blue-500 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,9 +25,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/admin" className="hover:text-gray-200">
-                Admin
-              </Link>
+              <button
+                onClick={handleLogout}
+                className="className=text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded"
+              >
+                Logout
+              </button>
             </li>
           </ul>
         </nav>
