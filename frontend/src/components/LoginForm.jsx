@@ -10,13 +10,22 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const validEmail = "bashar@gmail.com";
-    const validPassword = "123456";
+    // Define credentials
+    const validUserEmail = "bashar@gmail.com";
+    const validUserPassword = "123456";
+    const adminEmail = "admin@gmail.com";
+    const adminPassword = "123456";
 
-    if (email === validEmail && password === validPassword) {
+    if (email === adminEmail && password === adminPassword) {
+      // Navigate to AdminPage if admin credentials are correct
+      setError("");
+      navigate("/admin");
+    } else if (email === validUserEmail && password === validUserPassword) {
+      // Navigate to HomePage if user credentials are correct
       setError("");
       navigate("/home");
     } else {
+      // Show error message if credentials are invalid
       setError("Invalid email or password. Please try again.");
     }
   };
