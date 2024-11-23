@@ -64,6 +64,8 @@ const AdminPage = () => {
         <h2 className="text-xl font-bold text-gray-800 mb-4">
           Registered Users
         </h2>
+
+        {/* Table container with horizontal scrolling for small screens */}
         <div className="overflow-x-auto">
           <table className="table-auto w-full border-collapse border border-gray-300 shadow-lg">
             <thead>
